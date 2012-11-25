@@ -446,7 +446,6 @@ public class SFTPFileSystem extends FileSystem {
 					modTime, root.makeQualified(this));
 		}
 		String pathName = parentPath.toUri().getPath();
-		@SuppressWarnings("unchecked")
 		Vector<LsEntry> entries = null;
 		try {
 			entries = client.ls(pathName);
