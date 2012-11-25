@@ -9,10 +9,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- Hadoop Package versions -->
+		<!-- Hadoop package versions -->
 		<hadoop.version>1.0.4</hadoop.version>
 		<hbase.version>0.94.2</hbase.version>
 		<zookeeper.version>3.4.4</zookeeper.version>
+		
+		<!-- Akka package versions -->
+		<akka.version>2.0.4</akka.version>
 	</properties>
 
 	<developers>
@@ -54,6 +57,18 @@
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
 			<version>${zookeeper.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor</artifactId>
+			<version>${akka.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>jsch</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.49</version>
 		</dependency>
 		
 		<dependency>
@@ -109,5 +124,31 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>local-nexus</id>
+					<url>http://maven.tcloudcomputing.com.cn:8081/nexus/content/groups/public/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>typesafe</id>
+					<name>Typesafe</name>
+					<url>http://repo.typesafe.com/typesafe/releases/</url>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
 
 </project>
