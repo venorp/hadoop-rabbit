@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+    <property>
+		<name>mapreduce.rabbit.input.map.number</name>
+		<value>5</value>
+		<description>Rabbit is MapOnly API, this parameter is setting that how many child daemon to run</description>
+    </property>
+    
+     <property>
+		<name>mapreduce.rabbit.input.map.number</name>
+		<value>5</value>
+		<description>Rabbit is MapOnly API, this parameter is setting that how many child daemon to run</description>
+    </property>
+</configuration>
